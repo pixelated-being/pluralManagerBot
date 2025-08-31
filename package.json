@@ -1,0 +1,22 @@
+{
+  "name": "plural-dm-manager",
+  "version": "1.0.0",
+  "description": "a discord bot to manage a dm-style server that includes pluralkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelated-being/pluralManagerBot.git"
+  },
+  "author": "thestardustcollective",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixelated-being/pluralManagerBot/issues"
+  },
+  "homepage": "https://github.com/pixelated-being/pluralManagerBot#readme",
+  "dependencies": {
+    "discord.js": "^14.18.0"
+  }
+}
