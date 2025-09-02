@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+// silly stuff because its funny
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('dont')
