@@ -5,7 +5,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('Disable activity check')
+		.setName('dontcheckme')
 		.setDescription("Don't acknowledge activity from my account"),
 	async execute(interaction) {
 		// add user ID and guild ID to collection client.ignoreUsers
