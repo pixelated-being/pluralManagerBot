@@ -4,7 +4,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('get channel position')
+		.setName('getChannelPosition')
 		.setDescription('debug: write number of channel position'),
 	async execute(interaction) {
 		await interaction.reply("the channel position is " + Guildchannel.position);
