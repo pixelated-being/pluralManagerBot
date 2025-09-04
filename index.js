@@ -4,11 +4,11 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');	
 
-client.ignoreUsers = new Collection();
-client.pingUsers = new Collection ();
-
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+client.ignoreUsers = new Collection();
+client.pingUsers = new Collection ();
 
 client.commands = new Collection();
 
