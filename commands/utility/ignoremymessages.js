@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, MessageFlags } = require('discord.js');
 
 // make bot not shift channels based on user's messages
 // TODO: integrate Pluralkit/Myriad API later on to also ignore proxied messages
