@@ -37,3 +37,7 @@ for (const file of eventFiles) {
 }
 
 client.login(token);
+
+
+
+// JESS WAS HERE >:3
