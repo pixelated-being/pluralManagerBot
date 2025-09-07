@@ -1,26 +1,26 @@
-// const { Events } = require('discord.js');
+const { Events } = require('discord.js');
 
-// module.exports = {
-// 	name: Events.messageCreate,
-// 	async execute(interaction) {
-// 		if (interaction.isChatInputCommand()) return;
+module.exports = {
+	name: Events.messageCreate,
+	async execute(newMessage) {
+		if (newMessage.isChatInputCommand()) return;
 
-// 		const command = interaction.client.commands.get(interaction.commandName);
+        // this is just to process/use the command type
+		// const command = interaction.client.commands.get(interaction.commandName);
+        const message = newMessage.content;
+        console.log(message);
+        const temp = true; // temp variable in place of an eventual "include commands" setting (per-channel?)
 
-// 		if (!command) {
-// 			console.error(`No command matching ${interaction.commandName} was found.`);
-// 			return;
-// 		}
-
-// 		try {
-// 			await command.execute(interaction);
-// 		} catch (error) {
-// 			console.error(error);
-// 			if (interaction.replied || interaction.deferred) {
-// 				await interaction.followUp({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
-// 			} else {
-// 				await interaction.reply({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral });
-// 			}
-// 		}
-// 	},
-// };
+		if (MessageChannel.position == 0) {
+			console.log("channel not moved because already at the top");
+			return;
+		}
+        else if (message.includes("pk;" || "pk ;" || "pk!" || "pk !") && !temp) {
+            console.log("message not counted because it's a pluralkit command!");
+            return;
+        }
+        else {
+            console.log("ill move the channel later...");
+        }
+	},
+};
