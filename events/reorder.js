@@ -22,7 +22,8 @@ module.exports = {
             return;
         }
         else {
-            console.log("ill move the channel when i have the ability");
+            console.log("channel shifted!");
+            newMessage.channel.setPosition(0);
         }
 	},
 };
