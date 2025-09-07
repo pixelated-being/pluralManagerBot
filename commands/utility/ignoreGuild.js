@@ -9,6 +9,6 @@ module.exports = {
 		.setDescription("Don't reorder channels in this guild."),
 	async execute(interaction) {
 		await interaction.reply({content:"Channels won't be reordered in this server!"});
-		console.log("ignore command run!");
+		console.log("ignore command run for guild " + interaction.guild);
 	},
 };
