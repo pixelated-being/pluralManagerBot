@@ -6,5 +6,6 @@ module.exports = {
 		.setDescription('make sure the bot is alive'),
 	async execute(interaction) {
 		await interaction.reply('test complete ✅');
+		console.log("test tickle :)");
 	},
 };

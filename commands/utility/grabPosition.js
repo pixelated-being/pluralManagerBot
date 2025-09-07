@@ -8,5 +8,6 @@ module.exports = {
 		.setDescription('debug: write number of channel position'),
 	async execute(interaction) {
 		await interaction.reply("the channel position is " + interaction.channel.position);
+		console.log("channel position was requested!");
 	},
 };

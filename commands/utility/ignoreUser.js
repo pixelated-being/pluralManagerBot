@@ -10,5 +10,6 @@ module.exports = {
 	async execute(interaction) {
 		
 		await interaction.reply({content:"Messages from your account won't be checked!", flags: MessageFlags.Ephemeral });
+		console.log("user" + interaction.user + "is being ignored now!");
 	},
 };
