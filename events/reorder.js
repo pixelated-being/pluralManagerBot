@@ -17,7 +17,7 @@ module.exports = {
 			console.log("channel not moved because already at the top");
 			return;
 		}
-        else if (message.includes("pk;" || "pk ;" || "pk!" || "pk !") && !temp) {
+        else if (message.includes("pk;" || "pk ;" || "pk!" || "pk !") && temp) {
             console.log("message not counted because it's a pluralkit command!");
             return;
         }
