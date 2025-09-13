@@ -10,7 +10,11 @@ module.exports = {
         const MessageChannel = newMessage.channel; // You forgot to define MessageChannel
         
         console.log("channel position is: " + MessageChannel.position);
-		if (MessageChannel.position == 0) {
+		if(newMessage.author.bot) {
+            console.log("ignoring bot message!");
+            return;
+        }
+        else if (MessageChannel.position == 0) {
 			console.log("channel not moved because already at the top");
 			return;
 		}
