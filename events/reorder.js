@@ -10,9 +10,9 @@ module.exports = {
         const MessageChannel = newMessage.channel; // You forgot to define MessageChannel
         
         console.log("channel position is: " + MessageChannel.position);
-		if(newMessage.author.bot && !newMessage.webhookID) {
+		if(newMessage.author.bot && !newMessage.webhookId) {
             console.log("ignoring bot message!");
-            console.log("captain hook's number is: " + newMessage.webhookID);
+            console.log("captain hook's number is: " + newMessage.webhookId);
             return;
         }
         else if (MessageChannel.position == 0) {
