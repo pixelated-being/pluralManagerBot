@@ -10,7 +10,7 @@ module.exports = {
         const MessageChannel = newMessage.channel; // You forgot to define MessageChannel
 
         const conditions = ["pk;", "pk ;", "pk!", "pk !"];
-        const isCommand = conditions.some(el => message.includes(el));
+        const isCommand = conditions.some(el => message.startsWith(el));
         
         console.log("channel position is: " + MessageChannel.position);
 		if(newMessage.author.bot && !newMessage.webhookId) {
