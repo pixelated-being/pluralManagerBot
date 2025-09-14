@@ -8,6 +8,9 @@ module.exports = {
         const temp = true; // temp variable in place of an eventual "include commands" setting (per-channel?)
         
         const MessageChannel = newMessage.channel; // You forgot to define MessageChannel
+
+        const conditions = ["pk;", "pk ;", "pk!", "pk !"];
+        const isCommand = conditions.some(el => message.includes(el));
         
         console.log("channel position is: " + MessageChannel.position);
 		if(newMessage.author.bot && !newMessage.webhookId) {
@@ -23,8 +26,8 @@ module.exports = {
             console.log("advancement made: how did we get here?");
             return;
         }
-        else if (message.includes("pk;" || "pk ;" || "pk!" || "pk !") && temp) {
-            console.log("message not counted because it's a pluralkit command!");
+        else if (isCommand && temp) {
+            console.log("message not counted because it's a pluralkit command!"); // i dont think this works yet but idc right now
             return;
         }
         else {
@@ -32,4 +35,4 @@ module.exports = {
             newMessage.channel.setPosition(0);
         }
 	},
-};
+};  
