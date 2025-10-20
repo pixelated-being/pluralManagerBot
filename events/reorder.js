@@ -5,9 +5,9 @@ module.exports = {
 	async execute(newMessage) {
         let message = newMessage.content;
         
-        const temp = true; // temp variable in place of an eventual "include commands" setting (per-channel?)
+        const temp = true; // temp variable in place of an eventual "include commands" setting (per-channel)
         
-        const MessageChannel = newMessage.channel; // You forgot to define MessageChannel
+        const MessageChannel = newMessage.channel;
 
         const conditions = ["pk;", "pk ;", "pk!", "pk !"];
         const isCommand = conditions.some(el => message.startsWith(el));
@@ -27,7 +27,11 @@ module.exports = {
             return;
         }
         else if (isCommand && temp) {
-            console.log("message not counted because it's a pluralkit command!"); // i dont think this works yet but idc right now
+            console.log("message not counted because it's a pluralkit command!");
+            return;
+        } 
+        else if(MessageChannel.type == 15 || MessageChannel.type == 11) {
+            console.log("forums/threads cant be moved!")
             return;
         }
         else {
