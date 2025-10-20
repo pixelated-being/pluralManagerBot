@@ -6,8 +6,16 @@ module.exports = {
         let message = newMessage.content;
         
         const temp = true; // temp variable in place of an eventual "include commands" setting (per-channel)
+		const tempHandleThreads = false; // was told to have the thread handling be configurable, assuming default to false
         
         const MessageChannel = newMessage.channel;
+		if(MessageChannel.type == 10 || MessageChannel.type == 11 || MessageChannel.type == 12 && tempHandleThreads) { // handles moving parent channel instead of threads in a forums channel or normal channel
+			MessageChannel = MessageChannel.parent_id; // parent ID resolves to a category for normal channels but resolves to a channel for threads and forums
+			console.log("changing target channel to thread/forum parent channel!");
+		else if(MessageChannel.type == 1 || MessageChannel.type == 3 && tempHandleThreads) { // blocks both DMs and group DMs. 
+			console.log("ignored DM/group DM sent from \"" + newMessage.author.username + "\"!");
+			return;
+		}
 
         const conditions = ["pk;", "pk ;", "pk!", "pk !"];
         const isCommand = conditions.some(el => message.startsWith(el));
