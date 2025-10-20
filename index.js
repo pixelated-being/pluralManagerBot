@@ -13,13 +13,13 @@ const client = new Client({
 }); // Try now
 
 // init sequelize/sqlite for persistent data for guilds & stuff
-const sequelize = new Sequelize('database', 'user', password , {
+/*const sequelize = new Sequelize('database', 'user', password , {
     dialect: 'sqlite',
     host: 'localhost',
     logging: false,
     // SQLite only
     storage: 'database.sqlite'
-});
+}); */
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
