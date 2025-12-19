@@ -13,7 +13,7 @@ const client = new Client({
 }); // Try now
 
 const url = 'mongodb://localhost:27017';
-const mongoClient = new mongoClient(url);
+const mongoClient = new mongodb(url);
 const settingsDB = 'pluralbot';
 
 client.commands = new Collection();
