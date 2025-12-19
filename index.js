@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js'); 
 const { token } = require('./config.json');
-const { mongodb } = require('mongodb');
+const dbClient = require('mongodb');
 
 const client = new Client({ 
 	intents: [
@@ -13,7 +13,7 @@ const client = new Client({
 }); // Try now
 
 const url = 'mongodb://localhost:27017';
-const mongoClient = new mongodb(url);
+const dbClient = new MongoClient(url);
 const settingsDB = 'pluralbot';
 // something is very wrong
 
