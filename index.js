@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js'); 
 const { token } = require('./config.json');
-const dbClient = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 const client = new Client({ 
 	intents: [
