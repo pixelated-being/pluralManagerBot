@@ -1,8 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const Sequelize = require('sequelize');
 const { Client, Collection, GatewayIntentBits } = require('discord.js'); 
 const { token } = require('./config.json');
+const { mongodb } = require('mongodb');
 
 const client = new Client({ 
 	intents: [
@@ -12,17 +12,12 @@ const client = new Client({
 	]
 }); // Try now
 
-// init sequelize/sqlite for persistent data for guilds & stuff
-/*const sequelize = new Sequelize('database', 'user', password , {
-    dialect: 'sqlite',
-    host: 'localhost',
-    logging: false,
-    // SQLite only
-    storage: 'database.sqlite'
-}); */
+const url = 'mongodb://localhost:27017';
+const mongoClient = new mongoClient(url);
+const settingsDB = 'pluralbot';
 
 client.commands = new Collection();
-const foldersPath = path.join(__dirname, 'commands');
+const foldersPath = path.join(__dirname, 'commands');	
 const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
