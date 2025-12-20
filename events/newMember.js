@@ -9,7 +9,7 @@ module.exports = {
             // true will eventually refer to the setting of whether the bot should make a new chat for added users. also going to make sure the added person isnt a bot... eventually.
             console.log("let's make a channel");
             member.guild.channels.create ({
-                name: member.member.user.username,
+                name: member.user.username,
                 reason: "new friend!",
                 permissionOverwrites: [
                     {
@@ -17,7 +17,7 @@ module.exports = {
                         deny: [ PermissionsBitField.Flags.ViewChannel ]
                     },
                     { 
-                        id: member.member.user.id,
+                        id: member.user.id,
                         allow: [ PermissionsBitField.Flags.ViewChannel ]
                     }
                 ]
