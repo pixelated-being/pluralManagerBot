@@ -8,7 +8,7 @@ module.exports = {
         if(true) {
             // true will eventually refer to the setting of whether the bot should make a new chat for added users. also going to make sure the added person isnt a bot... eventually.
             console.log("let's make a channel");
-                this.guild.channels.create ({
+                member.guild.channels.create ({
                 name: member.user.username,
                 reason: "new friend!",
                 type: ChannelType.GuildText,
