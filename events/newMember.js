@@ -30,7 +30,6 @@ module.exports = {
                         allow: [ PermissionsBitField.Flags.ViewChannel ]
                     }))
                 ],
-                parent: cat[0].ID,
             });
             return;
         }
