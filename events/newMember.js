@@ -1,4 +1,4 @@
-const { Events } = require('discord.js');
+const { Events, PermissionsBitField } = require('discord.js');
 
 // add a channel for any new member
 module.exports = {
@@ -13,12 +13,12 @@ module.exports = {
                 reason: "new friend!",
                 permissionOverwrites: [
                     {
-                        id: member.guild.roles.everyone, 
-                        deny: [ ViewChannel ]
+                        id: member.guild.id,
+                        deny: [ PermissionsBitField.ViewChannel ]
                     },
                     { 
                         id: member.user.id,
-                        allow: [ ViewChannel ]
+                        allow: [ PermissionsBitField.ViewChannel ]
                     }
                 ]
             });
