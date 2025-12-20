@@ -25,11 +25,12 @@ module.exports = {
                         id: member.user.id,
                         allow: [ PermissionsBitField.Flags.ViewChannel ]
                     },
-                    ...defaultAdds.map(id => ({
+                    ...defaultAllowPeople.map(id => ({
                         id: id, // Jess added this, everyone thank Jess for saving the day
                         allow: [ PermissionsBitField.Flags.ViewChannel ]
                     }))
-                ]
+                ],
+                parent: cat[0].ID,
             });
             return;
         }
