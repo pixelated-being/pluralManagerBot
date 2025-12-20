@@ -1,6 +1,6 @@
 const { Events, PermissionsBitField } = require('discord.js');
 
-const defaultAdds = [
+const defaultAllowPeople = [
     "466378653216014359", // PluralKit
     "1341869009989271632", // Plural DM Manager
 ]
