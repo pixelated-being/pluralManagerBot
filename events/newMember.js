@@ -14,11 +14,11 @@ module.exports = {
                 permissionOverwrites: [
                     {
                         id: member.guild.roles.everyone, 
-                        deny: [ PermissionsBitField.Flags.ViewChannel ]
+                        deny: [ ViewChannel ]
                     },
                     { 
                         id: member.user.id,
-                        allow: [ PermissionsBitField.Flags.ViewChannel ]
+                        allow: [ ViewChannel ]
                     }
                 ]
             });
