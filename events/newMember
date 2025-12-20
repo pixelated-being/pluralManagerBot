@@ -1,0 +1,25 @@
+const { Events } = require('discord.js');
+
+// add a channel for any new member
+module.exports = {
+    name: Events.guildMemberAdd,
+    async execute(member) {
+        if(!member.user.bot && true) {
+            // && true will eventually refer to the setting of whether the bot should make a new chat for added users
+            guild.channels.create ({
+                name: member.user.username,
+                reason: "new friend!",
+                permissionOverwrites: [
+                    {
+                        id: guild.roles.everyone, 
+                        deny: [ PermissionsBitField.Flags.ViewChannel ]
+                    },
+                    { 
+                        id: member.user.id,
+                        allow: [ PermissionsBitField.Flags.ViewChannel ]
+                    }
+                ]
+            })
+        }
+    },
+}

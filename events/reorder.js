@@ -9,7 +9,7 @@ module.exports = {
         
         const MessageChannel = newMessage.channel;
 
-        const conditions = ["pk;", "pk ;", "pk!", "pk !"];
+        const conditions = ["pk;", "pk!"];
         const isCommand = conditions.some(el => message.startsWith(el));
         
         console.log("channel position is: " + MessageChannel.position);

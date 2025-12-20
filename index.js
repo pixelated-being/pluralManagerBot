@@ -13,9 +13,8 @@ const client = new Client({
 }); // Try now
 
 const url = 'mongodb://localhost:27017';
+const settingsDB = 'pluralbot';	
 const dbClient = new MongoClient(url);
-const settingsDB = 'pluralbot';
-// something is very wrong
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');	
