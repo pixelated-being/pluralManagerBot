@@ -11,7 +11,6 @@ module.exports = {
                 member.guild.channels.create ({
                 name: member.user.username,
                 reason: "new friend!",
-                type: ChannelType.GuildText,
                 permissionOverwrites: [
                     {
                         id: guild.roles.everyone, 
