@@ -2,7 +2,7 @@ const { Events } = require('discord.js');
 
 // add a channel for any new member
 module.exports = {
-    name: Events.guildMemberAdd,
+    name: Events.GuildMemberAdd,
     async execute(member) {
         console.log("WOAH A NEW PERSON!");
         if(true) {
