@@ -7,10 +7,10 @@ const { database } = require('./db.js');
 const client = new Client({ 
 	intents: [
 		GatewayIntentBits.Guilds, 
-		GatewayIntentBits.MessageContent, 
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.GuildMembers,
-		GatewayIntentBits.GuildPresences
+		// GatewayIntentBits.MessageContent, 
+		// GatewayIntentBits.GuildMessages,
+		// GatewayIntentBits.GuildMembers,
+		// GatewayIntentBits.GuildPresences
 	]
 }); // Try now
 
