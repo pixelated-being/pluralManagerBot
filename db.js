@@ -1,7 +1,7 @@
-const { dbClient } = require('pg');
+const { Client } = require('pg');
 require('dotenv').config();
 
-const dbclient = new dbClient({
+const dbclient = new Client({
   user: 'postgres',
   host: process.env.MACHINE_IP,
   database: 'postgres',
