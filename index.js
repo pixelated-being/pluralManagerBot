@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js'); 
 const { token } = require('./config.json');
-const { mongodb } = require('mongodb');
+const { database } = require('./postgres.js');
 
 const client = new Client({ 
 	intents: [
@@ -11,10 +11,6 @@ const client = new Client({
 		GatewayIntentBits.GuildMessages
 	]
 }); // Try now
-
-const url = 'mongodb://localhost:27017';
-const mongoClient = new mongoClient(url);
-const settingsDB = 'pluralbot';
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');	
